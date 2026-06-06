@@ -1,257 +1,84 @@
 # Aether IDE 🌌
 
-### *Where ideas turn into code, instantly.*
+Aether IDE is a modern, responsive, browser-based coding workspace designed to combine powerful editor capabilities, instant code compilation, and integrated AI assistance into a single unified dashboard.
 
-Aether IDE is more than just an online code editor — it’s a complete developer workspace built for creators, learners, and curious minds who love building things.
-
-Whether you're debugging late at night, learning your first language, testing quick snippets, or building your next big project, Aether IDE gives you a smooth, intelligent, and distraction-free environment directly in your browser.
-
-Write code. Run it instantly. Understand it deeply.
-All in one place.
+Designed for developers, learners, and educators, Aether IDE provides everything needed to write, execute, debug, and understand code in real-time.
 
 ---
 
-# ✨ Why Aether IDE?
+## 🚀 Key Features
 
-Modern development tools are often overloaded, complicated, or require heavy setup.
-
-Aether IDE was created to feel different.
-
-It combines:
-
-* ⚡ Fast online code execution
-* 🧠 AI-powered assistance
-* 🎯 Clean and focused UI
-* 📚 Beginner-friendly explanations
-* 💻 Multi-language support
-
-into a single seamless experience.
-
-No complicated installations.
-No switching between 10 tabs.
-Just open the browser and start building.
+- **Intuitive Code Editor**: Powered by CodeMirror 6 with dynamic language syntax highlighting for JavaScript, Python, Java, C++, TypeScript, HTML, CSS, and Markdown.
+- **Online Code Compilation**: Connects to the OneCompiler API for compiling and executing 15+ major programming languages (including C, Go, Rust, PHP, Ruby, and Kotlin) directly in-browser.
+- **Multi-Line Stdin Support**: Run programs with custom input parameters using the interactive terminal pane.
+- **AI Chat Assistant**: Ask programming questions, request refactoring advice, or generate entire code scripts using natural language instructions.
+- **Deep Code Explanations**: Features a dedicated background parser that automatically explains your code using simple, readable lists.
+- **One-Click AI Debugging**: Feed runtime errors directly into the AI helper to automatically correct, rewrite, and explain the code solution.
+- **Command Palette & Focus Mode**: Quick controls (`Ctrl + K`) for custom commands, font resizing, dark/light theme switching, and minimalist focus mode views.
 
 ---
 
-# 🚀 Features
+## 🛠️ Technology Stack
 
-## 🖊️ Smart Code Editor
-
-Powered by **CodeMirror 6**, the editor delivers a smooth and modern coding experience with syntax highlighting for:
-
-* JavaScript
-* Python
-* Java
-* C++
-* TypeScript
-* HTML
-* CSS
-* Markdown
-* and many more...
+- **Frontend Core**: React 19, React DOM, and Create React App structure
+- **Editor Core**: CodeMirror 6 (`@uiw/react-codemirror` and custom lang-packs)
+- **Networking**: Axios Client Integration
+- **LLM Reasoning**: Llama-3.1 via Groq API
+- **Compilation Engine**: OneCompiler REST API
 
 ---
 
-## ⚡ Instant Code Compilation
+## ⚙️ Setting Up Environment Variables
 
-Run code directly inside the browser using the **OneCompiler API**.
-
-Supports 15+ programming languages including:
-
-* C
-* Go
-* Rust
-* PHP
-* Ruby
-* Kotlin
-* Java
-* Python
-
-No local compiler setup needed.
-
----
-
-## 🤖 Integrated AI Assistant
-
-Built-in AI support powered by **Llama 3.1 via Groq API**.
-
-Ask questions like:
-
-* “Why is this code failing?”
-* “Optimize this function”
-* “Explain recursion simply”
-* “Generate a REST API example”
-
-The AI works like a coding companion beside your editor.
-
----
-
-## 📖 Automatic Code Explanations
-
-Aether IDE can analyze your code and explain it in simple human-readable steps.
-
-Perfect for:
-
-* Beginners learning programming
-* Understanding large code blocks
-* Teaching concepts quickly
-* Debugging logic mistakes
-
----
-
-## 🛠️ One-Click AI Debugging
-
-Encountered an error?
-
-Send the runtime error directly to the AI assistant and receive:
-
-* corrected code
-* explanation of the issue
-* cleaner implementation suggestions
-
-in seconds.
-
----
-
-## 🎯 Focus Mode & Productivity Tools
-
-Coding should feel calm and distraction-free.
-
-Aether IDE includes:
-
-* ⌨️ Command Palette (`Ctrl + K`)
-* 🌙 Dark / Light theme switching
-* 🔍 Font resizing controls
-* 🧘 Minimal focus mode
-
-so you can build comfortably for hours.
-
----
-
-# 🧰 Tech Stack
-
-| Technology      | Purpose            |
-| --------------- | ------------------ |
-| React 19        | Frontend Framework |
-| CodeMirror 6    | Editor Engine      |
-| Axios           | API Communication  |
-| Groq API        | AI Reasoning       |
-| Llama 3.1       | Language Model     |
-| OneCompiler API | Code Compilation   |
-
----
-
-# ⚙️ Environment Setup
-
-Create a `.env` file in the root directory:
+To activate the compiler and AI features, create a `.env` file in the root of the project:
 
 ```env
-# Groq API Key
+# Groq API Key for AI features (https://console.groq.com/)
 REACT_APP_GROQ_API_KEY=your_groq_api_key_here
 
-# OneCompiler API Key
+# OneCompiler API Key for compiling code (https://rapidapi.com/)
 REACT_APP_ONECOMPILER_API_KEY=your_onecompiler_api_key_here
 ```
 
-> Make sure both API keys are valid for AI chat and code execution features to work properly.
+> [!NOTE]
+> Ensure that both keys are valid. The AI Chat, live explanations, and code execution flows will display instructions in their respective panels if their keys are missing or invalid.
 
 ---
 
-# 🏃 Getting Started
+## 🏃 Running Aether IDE Locally
 
-## 1️⃣ Install Dependencies
+Follow these standard commands to get Aether IDE running in your local workspace:
 
+### 1. Install Project Dependencies
+Use npm to download and link all required libraries:
 ```bash
 npm install
 ```
 
----
-
-## 2️⃣ Start Development Server
-
+### 2. Launch Development Server
+Start the React application dev server:
 ```bash
 npm start
 ```
+After building, the IDE will be accessible locally at `http://localhost:3000`.
 
-The application will run locally at:
-
-```bash
-http://localhost:3000
-```
-
----
-
-## 3️⃣ Run Tests
-
+### 3. Run Quality Control Tests
+Execute component smoke tests to verify interface elements and rendering logic:
 ```bash
 npm test
 ```
 
----
-
-## 4️⃣ Build for Production
-
+### 4. Compile Production Bundle
+Build optimized static assets ready for production deployment:
 ```bash
 npm run build
 ```
 
 ---
 
-# 🎨 Customization & Controls
+## 🎨 Customizable Controls
 
-| Feature            | Shortcut / Action |
-| ------------------ | ----------------- |
-| Command Palette    | `Ctrl + K`        |
-| Increase Font Size | `A+`              |
-| Decrease Font Size | `A-`              |
-| Toggle Theme       | Theme Button      |
-| Focus Mode         | Focus Toggle      |
-
----
-
-# 🌌 Vision Behind Aether IDE
-
-Aether IDE was built with a simple idea:
-
-> Coding tools should feel empowering, not overwhelming.
-
-It’s designed to help:
-
-* students learn faster,
-* developers prototype quicker,
-* educators teach better,
-* and creators stay focused.
-
-The goal is to make programming feel more interactive, intelligent, and accessible for everyone.
-
----
-
-# ❤️ Built For Developers Who Love Building
-
-If you enjoy creating, experimenting, learning, and improving every day —
-Aether IDE is made for you.
-
----
-
-# 📌 Future Plans
-
-* 🔥 Real-time collaborative coding
-* 📂 Project workspaces
-* ☁️ Cloud save support
-* 🧠 Smarter AI memory
-* 📱 Mobile responsive coding workspace
-* 🔌 Extension/plugin ecosystem
-
----
-
-# 📜 License
-
-This project is open-source and available under the MIT License.
-
----
-
-# 🌠 Final Note
-
-Aether IDE isn’t just a project.
-It’s an attempt to make coding feel smoother, smarter, and more human.
-
-Happy Coding 💫
+- **Command Palette**: Trigger using `Ctrl + K` or by clicking the `Commands` button in the navbar.
+- **Theme Switching**: Toggle between dark VS Code theme and light workspace theme with a single click.
+- **Font Resizing**: Quickly scale code editor size up (`A+`) or down (`A-`) in the editor toolbar.
+- **Focus Mode**: Hide extraneous chat and side panels to maximize writing space.

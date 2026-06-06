@@ -2,7 +2,6 @@
   "name": "aether-ide",
   "version": "1.0.0",
   "private": true,
-  "license": "MIT",
   "dependencies": {
     "@codemirror/lang-cpp": "^6.0.2",
     "@codemirror/lang-css": "^6.3.1",
@@ -12,6 +11,7 @@
     "@codemirror/lang-json": "^6.0.1",
     "@codemirror/lang-markdown": "^6.3.2",
     "@codemirror/lang-python": "^6.1.7",
+    "@supabase/supabase-js": "^2.106.2",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
